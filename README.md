@@ -1,2 +1,2 @@
 # maua
-Web app to user plantnet's API
+Web app to use plantnet's API
