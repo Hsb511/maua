@@ -21,16 +21,14 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    TranslateModule.forRoot(
-      {
+    TranslateModule.forRoot({
         defaultLanguage: 'fr',
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         }
-      }
-      )
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
