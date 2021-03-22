@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapIconsModule } from 'ng-bootstrap-icons';
+import { allIcons } from 'ng-bootstrap-icons/icons';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -34,7 +36,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         }
-    })
+    }),
+    BootstrapIconsModule.pick(allIcons),
+  ],
+  exports: [
+    BootstrapIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
