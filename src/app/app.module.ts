@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatSlideToggleModule,
   ],
   exports: [
     BootstrapIconsModule
