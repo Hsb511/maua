@@ -12,6 +12,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UploadComponent } from './upload/upload.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -38,6 +42,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         }
     }),
     BootstrapIconsModule.pick(allIcons),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   exports: [
     BootstrapIconsModule
