@@ -8,7 +8,6 @@ import { BootstrapIconsModule } from 'ng-bootstrap-icons';
 import { allIcons } from 'ng-bootstrap-icons/icons';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UploadComponent } from './upload/upload.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -18,9 +17,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
+import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
+export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
+  return new MultiTranslateHttpLoader(http, [
+    {prefix: "./assets/i18n/home/", suffix: ".json"}
+  ]);
 }
 
 @NgModule({
