@@ -1,6 +1,7 @@
-{
-    "upload": "Envoi",
-    "statistic": "Statistique",
-    "gallery": "Galerie",
-    "language": "Langue"
+{ 
+    "nav": {
+        "upload": "Envoi",
+        "statistic": "Statistique",
+        "gallery": "Galerie"
+    }
 }

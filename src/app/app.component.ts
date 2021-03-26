@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,5 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  CLASS_FLAG = 'align-middle flag-icon-size flag-icon flag-icon-';
-  AVAILABLE_LANGUAGES = ['fr', 'gb'];
-
-  title = 'maua';
-  selected_language = 'fr';
+  
 }

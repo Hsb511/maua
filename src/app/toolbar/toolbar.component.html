@@ -1,0 +1,27 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary">
+    <button mat-button [routerLink]="'../upload'">
+        <mat-icon color="accent" class="mr-1">upload</mat-icon>
+        <span>{{'nav.upload' | translate}}</span>
+    </button>
+    <button mat-button [routerLink]="'../statistic'">
+        <mat-icon color="accent"  class="mr-1">analytics</mat-icon>
+        <span>{{'nav.statistic' | translate}}</span>
+    </button>
+    <button mat-button [routerLink]="'../gallery'">
+        <mat-icon color="accent"  class="mr-1">insert_photo</mat-icon>
+        <span>{{'nav.gallery' | translate}}</span>
+    </button>
+    
+    <span class="example-spacer"></span>
+    
+    <mat-slide-toggle color="accent"></mat-slide-toggle>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <span [class]="CLASS_FLAG + selected_language"></span>
+    </button>
+    <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center">
+        <button *ngFor="let language of available_langauges" mat-menu-item (click)="selected_language = language">
+            <span [class]="CLASS_FLAG + language"></span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

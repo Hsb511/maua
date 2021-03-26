@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     AppComponent,
     UploadComponent,
     StatisticComponent,
-    GalleryComponent
+    GalleryComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

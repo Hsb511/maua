@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.flag-icon-size {
+    height: 21px;
+    width: 28px;
+    border-radius: 23%;
+}
