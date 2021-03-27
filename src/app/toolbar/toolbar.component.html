@@ -1,5 +1,6 @@
 <!-- Toolbar -->
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="pr-0">
+    <img src="../../assets/images/maua.svg" alt="maua" class="h-50 mr-2">
     <button mat-button [routerLink]="'../upload'">
         <mat-icon color="accent" class="mr-1">upload</mat-icon>
         <span>{{'nav.upload' | translate}}</span>
@@ -19,7 +20,7 @@
     <button mat-button [matMenuTriggerFor]="menu">
         <span [class]="CLASS_FLAG + selectedLanguage"></span>
     </button>
-    <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center">
+    <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center mt-2">
         <button *ngFor="let language of availableLangauges" mat-menu-item (click)="selectedLanguage = language">
             <span [class]="CLASS_FLAG + language"></span>
         </button>
