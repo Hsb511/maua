@@ -15,12 +15,12 @@
     
     <span class="example-spacer"></span>
     
-    <mat-slide-toggle color="accent"></mat-slide-toggle>
+    <mat-icon color="accent" class="mr-1 mode-button" (click)="changeMode()">{{selectedTheme}}</mat-icon>
     <button mat-button [matMenuTriggerFor]="menu">
-        <span [class]="CLASS_FLAG + selected_language"></span>
+        <span [class]="CLASS_FLAG + selectedLanguage"></span>
     </button>
     <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center">
-        <button *ngFor="let language of available_langauges" mat-menu-item (click)="selected_language = language">
+        <button *ngFor="let language of availableLangauges" mat-menu-item (click)="selectedLanguage = language">
             <span [class]="CLASS_FLAG + language"></span>
         </button>
     </mat-menu>

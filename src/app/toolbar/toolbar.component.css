@@ -7,3 +7,11 @@
     width: 28px;
     border-radius: 23%;
 }
+
+.mode-button {
+    cursor: pointer;
+}
+
+.mode-button:hover {
+    color: #f0ead2;
+}
