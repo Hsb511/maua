@@ -1,17 +1,10 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
-
 .flag-icon-size {
     height: 21px;
     width: 28px;
     border-radius: 23%;
 }
 
-.mode-button {
-    cursor: pointer;
-}
-
 .mode-button:hover {
-    color: #f0ead2;
+    cursor: pointer;
+    color: var(--maua-hover)
 }

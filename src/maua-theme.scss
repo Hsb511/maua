@@ -1,19 +1,21 @@
 
 // Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+// Include the common styles for Angular Material
 @include mat-core();
+
+// Custom maua colors
+$maua-hover-color-light: (
+  500: #f0ead2,
+  contrast: (
+    500: #000000,
+  )
+);
 
 $maua-primary-color: (
   500: #6c584c,
-  contrast: (
-    500: #f0ead2,
-  )
+  contrast: $maua-hover-color-light
 );
 
 $maua-accent-color: (
@@ -23,17 +25,20 @@ $maua-accent-color: (
   )
 );
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
+$maua-warn-color: (
+  500: #c83737,
+  contrast: (
+    500: #000000,
+  )
+);
+
+// Custom maua palettes
+$maua-hover: mat-palette($maua-hover-color-light);
 $maua-primary: mat-palette($maua-primary-color);
 $maua-accent: mat-palette($maua-accent-color);
+$maua-warn: mat-palette($maua-warn-color);
 
-// The warn palette is optional (defaults to red).
-$maua-warn: mat-palette($mat-red);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
+// Custom maua theme
 $maua-theme: mat-light-theme((
   color: (
     primary: $maua-primary,
@@ -42,8 +47,9 @@ $maua-theme: mat-light-theme((
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+// Include theme styles for core and each component
 @include angular-material-theme($maua-theme);
 
+:root {
+  --maua-hover: #{mat-color($maua-hover)};
+}

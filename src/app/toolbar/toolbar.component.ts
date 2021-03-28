@@ -7,10 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  CLASS_FLAG = 'align-middle flag-icon-size flag-icon flag-icon-';
   availableLangauges;
 
-  title = 'maua';
   selectedLanguage = 'fr';
   selectedTheme = 'light_mode';
 

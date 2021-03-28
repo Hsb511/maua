@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -52,7 +51,6 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSlideToggleModule,
     MatMenuModule,
   ],
   exports: [
