@@ -1,0 +1,55 @@
+
+// Custom Theming for Angular Material
+@import '~@angular/material/theming';
+
+// Include the common styles for Angular Material
+@include mat-core();
+
+// Custom maua colors
+$maua-hover-color-light: (
+  500: #f0ead2,
+  contrast: (
+    500: #000000,
+  )
+);
+
+$maua-primary-color: (
+  500: #6c584c,
+  contrast: $maua-hover-color-light
+);
+
+$maua-accent-color: (
+  500: #adc178,
+  contrast: (
+    500: #000000,
+  )
+);
+
+$maua-warn-color: (
+  500: #c83737,
+  contrast: (
+    500: #000000,
+  )
+);
+
+// Custom maua palettes
+$maua-hover: mat-palette($maua-hover-color-light);
+$maua-primary: mat-palette($maua-primary-color);
+$maua-accent: mat-palette($maua-accent-color);
+$maua-warn: mat-palette($maua-warn-color);
+
+// Custom maua theme
+$maua-theme: mat-light-theme((
+  color: (
+    primary: $maua-primary,
+    accent: $maua-accent,
+    warn: $maua-warn,
+  )
+));
+
+// Include theme styles for core and each component
+@include angular-material-theme($maua-theme);
+
+:root {
+  --maua-hover: #{mat-color($maua-hover)};
+}

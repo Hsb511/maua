@@ -1,5 +1,7 @@
-{
-    "upload": "Envoi",
-    "statistic": "Statistique",
-    "gallery": "Galerie"
+{ 
+    "nav": {
+        "upload": "Envoi",
+        "statistic": "Statistique",
+        "gallery": "Galerie"
+    }
 }

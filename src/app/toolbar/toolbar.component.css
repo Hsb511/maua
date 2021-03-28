@@ -1,0 +1,10 @@
+.flag-icon-size {
+    height: 21px;
+    width: 28px;
+    border-radius: 23%;
+}
+
+.mode-button:hover {
+    cursor: pointer;
+    color: var(--maua-hover)
+}

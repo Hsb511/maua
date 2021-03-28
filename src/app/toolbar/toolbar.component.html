@@ -1,0 +1,27 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="pr-0">
+    <img src="../../assets/images/maua.svg" alt="maua" class="h-50 mr-2">
+    <button mat-button [routerLink]="'../upload'">
+        <mat-icon color="accent" class="mr-1">upload</mat-icon>
+        <span>{{'nav.upload' | translate}}</span>
+    </button>
+    <button mat-button [routerLink]="'../statistic'">
+        <mat-icon color="accent" class="mr-1">analytics</mat-icon>
+        <span>{{'nav.statistic' | translate}}</span>
+    </button>
+    <button mat-button [routerLink]="'../gallery'" class="mr-auto">
+        <mat-icon color="accent" class="mr-1">insert_photo</mat-icon>
+        <span>{{'nav.gallery' | translate}}</span>
+    </button>
+
+    <mat-icon color="accent" class="mr-1 mode-button" (click)="changeMode()">{{selectedTheme}}</mat-icon>
+
+    <button mat-button [matMenuTriggerFor]="menu">
+        <span [ngClass]="'align-middle flag-icon-size flag-icon flag-icon-' + selectedLanguage"></span>
+    </button>
+    <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center mt-2">
+        <button *ngFor="let language of availableLangauges" mat-menu-item (click)="selectedLanguage = language">
+            <span [ngClass]="'align-middle flag-icon-size flag-icon flag-icon-' + language"></span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

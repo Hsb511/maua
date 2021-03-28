@@ -11,7 +11,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -24,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     AppComponent,
     UploadComponent,
     StatisticComponent,
-    GalleryComponent
+    GalleryComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,11 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
         }
     }),
     BootstrapIconsModule.pick(allIcons),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   exports: [
     BootstrapIconsModule

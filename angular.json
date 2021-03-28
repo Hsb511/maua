@@ -28,8 +28,10 @@
               "src/assets"
             ],
             "styles": [
+              "src/maua-theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/flag-icon-css/css/flag-icon.min.css"
             ],
             "scripts": []
           },
@@ -88,7 +90,6 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
