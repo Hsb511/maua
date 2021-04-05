@@ -16,8 +16,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -52,6 +54,8 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatFileUploadModule,
   ],
   exports: [
     BootstrapIconsModule

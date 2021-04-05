@@ -1,0 +1,13 @@
+#upload-button {
+    height: 50px;
+}
+
+#upload-input {
+    cursor: pointer;
+    height: 50px;
+    opacity: 0;
+}
+
+.upload-zone {
+    border: 2px dashed var(--maua-primary);
+}
