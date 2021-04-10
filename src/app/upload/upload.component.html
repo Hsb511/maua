@@ -1,20 +1,23 @@
 <div class="d-flex flex-column align-items-center text-center my-5">
-    <button mat-raised-button color="accent" class="w-25" id="upload-button">
+    <button mat-raised-button color="accent" class="w-25 mt-5" id="upload-button">
         <span>{{'upload.button-message' | translate}}</span>
     </button>
-    <input type="file" [fileUploadInputFor]="fileUploadQueue" class="position-absolute w-25" id="upload-input"/>
+    <input type="file" multiple [fileUploadInputFor]="fileUploadQueue" class="position-absolute w-25 mt-5" id="upload-input"/>
 
     <p class="mt-4">{{'upload.or' | translate}}</p>
 
-    <div [fileUploadInputFor]="fileUploadQueue" class="w-50 p-5 mt-3 rounded upload-zone mx-auto">
+    <div [fileUploadInputFor]="fileUploadQueue" class="w-50 p-5 mt-3 rounded mx-auto" id="upload-zone">
         {{'upload.zone-message' | translate}}
     </div>
 </div>
 
 
 <mat-file-upload-queue #fileUploadQueue
-    [fileAlias]="'file'"
-    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'" multiple>
-
-    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+    uploadAllLabel="{{'upload.upload-all' | translate}}"
+    removeAllLabel="{{'upload.remove-all' | translate}}">
+    <div *ngFor="let file of fileUploadQueue.files; let i = index"
+        class="d-flex flex-row">
+        <span class="align-self-center">{{file.name}}</span>
+        <mat-icon color="primary" class="mr-1 delete-button" (click)="deleteFile()">delete</mat-icon>
+    </div>
 </mat-file-upload-queue>

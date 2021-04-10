@@ -8,6 +8,14 @@
     opacity: 0;
 }
 
-.upload-zone {
+#upload-zone {
     border: 2px dashed var(--maua-primary);
+    font-size: 14px; 
+    font-weight: 500;
+    color: black;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    color: var(--maua-hover)
 }
