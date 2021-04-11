@@ -19,3 +19,7 @@
     cursor: pointer;
     color: var(--maua-hover)
 }
+
+#fileUploadQueue {
+    opacity: 0;
+}

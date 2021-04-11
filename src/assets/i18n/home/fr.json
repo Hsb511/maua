@@ -9,7 +9,7 @@
         "button-message": "Cliquez ici et choisissez vos photos",
         "or":"OU",
         "zone-message": "Faites un glisser-déposer de vos photos ici",
-        "upload-all": "Tout envoyer",
-        "remove-all": "Tout supprimer"
+        "upload-all": "Envoyer",
+        "remove-all": "Annuler"
     }
 }
