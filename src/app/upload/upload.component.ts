@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { MatFileUploadQueueComponent } from 'angular-material-fileupload';
+import { LoadingModalComponent } from '../loading-modal/loading-modal.component';
 
 @Component({
   selector: 'app-upload',
@@ -8,8 +10,9 @@ import { MatFileUploadQueueComponent } from 'angular-material-fileupload';
 })
 export class UploadComponent {
   @ViewChild('fileUploadQueue') myFileUploadQueue?: ElementRef;
+  loadingModal?: NgbModalRef;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   deleteFile(file: File) {
     const files = this.getFiles();
@@ -22,10 +25,11 @@ export class UploadComponent {
     files.splice(0, files.length);
   }
 
-  upload() {
+  upload(loadingModal: any) {
     const files = this.getFiles();
-    // TODO APPELER LE SERVICE D'UPLOAD
+    // TODO CREATE AND CALL UPLOAD SERVICE
     console.log(files);
+    this.openLoadingModal(loadingModal);
   }
 
   private getFiles() : Array<File> {
@@ -34,5 +38,19 @@ export class UploadComponent {
       files = this.myFileUploadQueue.files;
     }
     return files;
+  }
+
+  private openLoadingModal(content: any) {
+    this.loadingModal = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: "dialog-centered"});
+    this.loadingModal.result.then((result) => {
+      console.log(result);
+    }, (reason) => {
+      console.log(reason);
+    });
+  }
+
+  // TODO CALL THIS METHOD WHEN UPLOAD SERVICE IS DONE
+  private closeLoadingModal() {
+    this.loadingModal?.close();
   }
 }

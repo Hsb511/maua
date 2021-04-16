@@ -11,6 +11,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { LoadingModalComponent } from './loading-modal/loading-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatFileUploadModule } from 'angular-material-fileupload';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -33,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     UploadComponent,
     StatisticComponent,
     GalleryComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LoadingModalComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     MatMenuModule,
     MatFormFieldModule,
     MatFileUploadModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     BootstrapIconsModule
