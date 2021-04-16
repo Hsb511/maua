@@ -23,12 +23,14 @@
     <div class="d-flex flex-row mt-n4">
         <button mat-raised-button color="primary" 
             class="d-flex ml-auto mr-2" 
-            *ngIf="fileUploadQueue.files.length > 0">
+            *ngIf="fileUploadQueue.files.length > 0"
+            (click)="upload()">
             {{'upload.upload-all' | translate}}
         </button>
         <button mat-raised-button color="primary" 
             class="d-flex ml-2 mr-auto" 
-            *ngIf="fileUploadQueue.files.length > 0">
+            *ngIf="fileUploadQueue.files.length > 0"
+            (click)="deleteAllFiles()">
             {{'upload.remove-all' | translate}}
         </button>
     </div>

@@ -12,11 +12,27 @@ export class UploadComponent {
   constructor() { }
 
   deleteFile(file: File) {
+    const files = this.getFiles();
+    const index = files.indexOf(file, 0);
+    files.splice(index, 1);
+  }
+
+  deleteAllFiles() {
+    const files = this.getFiles();
+    files.splice(0, files.length);
+  }
+
+  upload() {
+    const files = this.getFiles();
+    // TODO APPELER LE SERVICE D'UPLOAD
+    console.log(files);
+  }
+
+  private getFiles() : Array<File> {
+    var files = [];
     if (this.myFileUploadQueue instanceof MatFileUploadQueueComponent) {
-      const files = this.myFileUploadQueue.files;
-      console.log(files);
-      const index = files.indexOf(file, 0);
-      files.splice(index, 1);
+      files = this.myFileUploadQueue.files;
     }
+    return files;
   }
 }
