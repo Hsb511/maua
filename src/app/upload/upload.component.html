@@ -22,9 +22,12 @@
     </mat-file-upload-queue>
     <div class="d-flex flex-row mt-n4">
         <button mat-raised-button color="primary" 
+            type="button"
             class="d-flex ml-auto mr-2" 
             *ngIf="fileUploadQueue.files.length > 0"
-            (click)="upload(loadingModal)">
+            (click)="upload()"
+            data-toggle="modal"
+            data-target="#loadingModal">
             {{'upload.upload-all' | translate}}
         </button>
         <button mat-raised-button color="primary" 
@@ -36,6 +39,4 @@
     </div>
 </div>
 
-<ng-template #loadingModal let-modal>
-    <app-loading-modal></app-loading-modal>
-</ng-template>
+<app-loading-modal></app-loading-modal>

@@ -10,6 +10,7 @@
         "or":"OU",
         "zone-message": "Faites un glisser-déposer de vos photos ici",
         "upload-all": "Envoyer",
-        "remove-all": "Annuler"
+        "remove-all": "Annuler",
+        "modal-message": "Vos photos sont en cours d'analyse..."
     }
 }

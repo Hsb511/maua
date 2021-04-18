@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./loading-modal.component.css']
 })
 export class LoadingModalComponent {
-
-  constructor() {}
   
 }
