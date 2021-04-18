@@ -1,7 +1,11 @@
-<!-- Toolbar -->
-<app-toolbar></app-toolbar>
+<div class="h-100" [ngClass]="{'maua-dark-theme': isDarkTheme | async}">
+    <div class="mat-app-background h-100">
+        <!-- Toolbar -->
+        <app-toolbar></app-toolbar>
 
-<!-- Main -->
-<div class="content" role="main"></div>
+        <!-- Main -->
+        <div class="content" role="main"></div>
 
-<router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -17,11 +17,11 @@
             class="d-flex flex-row mx-3 justify-content-center">
             <span class="align-self-center col-4">{{file.name}}</span>
             <span class="align-self-center ml-4 col-1">{{file.size | bytes}}</span>
-            <mat-icon color="primary" class="mr-1 delete-button" (click)="deleteFile(file)">delete</mat-icon>
+            <mat-icon color="accent" class="mr-1 delete-button" (click)="deleteFile(file)">delete</mat-icon>
         </div>
     </mat-file-upload-queue>
     <div class="d-flex flex-row mt-n4">
-        <button mat-raised-button color="primary" 
+        <button mat-raised-button color="accent" 
             type="button"
             class="d-flex ml-auto mr-2" 
             *ngIf="fileUploadQueue.files.length > 0"
@@ -30,7 +30,7 @@
             data-target="#loadingModal">
             {{'upload.upload-all' | translate}}
         </button>
-        <button mat-raised-button color="primary" 
+        <button mat-raised-button color="accent" 
             class="d-flex ml-2 mr-auto" 
             *ngIf="fileUploadQueue.files.length > 0"
             (click)="deleteAllFiles()">
