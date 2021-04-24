@@ -21,7 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component'
 
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     StatisticComponent,
     GalleryComponent,
     ToolbarComponent,
-    LoadingModalComponent
+    LoadingModalComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
