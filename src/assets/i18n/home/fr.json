@@ -5,6 +5,15 @@
         "gallery": "Galerie"
     },
 
+    "welcome": {
+        "description": "Maua est une application vous permettant d'identifier des plantes et de renommer vos photos en toute simplicité !",
+        "princip1": "Le fonctionnement est simple : dans l'onglet ",
+        "princip2": " vous pouvez cliquer et sélectionner vos photos ou les glisser / déposer. Puis en un clic et un peu de patiente vous téléchargerez automatiquement vos photos renomées !",
+        "plantnet1": "Notre application utilise l'API ",
+        "plantnet2": "qui est basée sur du deep learning.",
+        "developer": "Elle a été développée par Laure Souche & Hugo Selle"
+    },
+
     "upload": {
         "button-message": "Cliquez ici et choisissez vos photos",
         "or":"OU",

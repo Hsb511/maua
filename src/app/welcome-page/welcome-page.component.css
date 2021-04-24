@@ -1,0 +1,20 @@
+.welcome-parent {
+    height: 80%;
+}
+
+.card-content {
+    text-align: justify; 
+    text-justify: inter-word;
+}
+
+.upload-tab:hover {
+    cursor: pointer;
+}
+
+.upload-tab:focus {
+    outline: none;
+}
+
+u, a {
+    color: var(--maua-accent)
+}

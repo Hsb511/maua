@@ -1,1 +1,19 @@
-<p>welcome-page works!</p>
+<div class="d-flex welcome-parent">
+    <mat-card class="p-4 w-50 mx-auto justify-content-center align-self-center">
+        <img src="../../assets/images/maua.svg" alt="maua" class="mr-4 mb-3 h-25 w-25 float-left">
+        <mat-card-content class="card-content my-auto">
+            <p>{{'welcome.description' | translate}}</p>
+            <p>
+                {{'welcome.princip1' | translate}}
+                <u [routerLink]="'../upload'" class="upload-tab">{{'nav.upload' | translate}}</u>
+                {{'welcome.princip2' | translate}}
+            </p>
+            <p>
+                {{'welcome.plantnet1' | translate}}
+                <u><a href="https://my.plantnet.org/usage" target="_blank" class="upload-tab">Pl@ntNet</a></u>
+                {{'welcome.plantnet2' | translate}}
+            </p>
+            <p>{{'welcome.developer' | translate}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

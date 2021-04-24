@@ -52,6 +52,7 @@ $maua-theme: mat-light-theme((
 
 :root {
   --maua-primary: #{mat-color($maua-primary)};
+  --maua-accent: #{mat-color($maua-accent)};
   --maua-hover: #{mat-color($maua-hover)};
 }
 
