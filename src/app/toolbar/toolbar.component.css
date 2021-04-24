@@ -8,3 +8,11 @@
     cursor: pointer;
     color: var(--maua-hover)
 }
+
+.maua-icon:hover {
+    cursor: pointer;
+}
+
+.maua-icon:focus {
+    outline: none;
+}
