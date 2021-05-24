@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ThemeService } from './theme.service';
 
@@ -7,12 +7,8 @@ import { ThemeService } from './theme.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  isDarkTheme?: Observable<boolean>;
+export class AppComponent {
+  isDarkTheme?: Observable<boolean> = this.themeService.isDarkTheme;
 
   constructor(private themeService: ThemeService) { }
-
-  ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
-  }
 }

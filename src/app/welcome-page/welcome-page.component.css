@@ -2,11 +2,6 @@
     height: 80%;
 }
 
-.card-content {
-    text-align: justify; 
-    text-justify: inter-word;
-}
-
 .upload-tab:hover {
     cursor: pointer;
 }
