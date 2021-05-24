@@ -54,3 +54,33 @@ $maua-theme: mat-light-theme((
   --maua-primary: #{mat-color($maua-primary)};
   --maua-hover: #{mat-color($maua-hover)};
 }
+
+// Custom maua dark colors
+$maua-dark-primary-color: (
+  500: #232323,
+  contrast: $maua-hover-color-light
+);
+
+$maua-dark-accent-color: (
+  500: #6c584c,
+  contrast: $maua-hover-color-light
+);
+
+// Custom maua dark palettes
+$maua-dark-primary: mat-palette($maua-dark-primary-color);
+$maua-dark-accent: mat-palette($maua-dark-accent-color);
+$maua-dark-warn: mat-palette($maua-warn-color);
+
+// Custom maua dark theme
+.maua-dark-theme {
+  $maua-dark-theme: mat-dark-theme((
+    color: (
+      primary: $maua-dark-primary,
+      accent: $maua-dark-accent,
+      warn: $maua-dark-warn,
+    )
+  ));
+  
+  // Include theme styles for core and each component
+  @include angular-material-theme($maua-dark-theme);
+}

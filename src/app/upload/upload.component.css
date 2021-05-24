@@ -12,7 +12,6 @@
     border: 2px dashed var(--maua-primary);
     font-size: 14px; 
     font-weight: 500;
-    color: black;
 }
 
 .delete-button:hover {
