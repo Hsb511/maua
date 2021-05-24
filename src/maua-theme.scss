@@ -51,5 +51,6 @@ $maua-theme: mat-light-theme((
 @include angular-material-theme($maua-theme);
 
 :root {
+  --maua-primary: #{mat-color($maua-primary)};
   --maua-hover: #{mat-color($maua-hover)};
 }
