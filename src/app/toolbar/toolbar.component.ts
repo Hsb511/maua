@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ThemeEnum } from '../common/enum/ThemeEnum';
 import { ThemeService } from '../theme.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ToolbarComponent {
   availableLangauges;
 
   selectedLanguage = 'fr';
-  selectedTheme = 'light_mode';
+  selectedTheme = ThemeEnum.LightMode;
 
   constructor(private translate: TranslateService,
     private themeService: ThemeService) {
@@ -19,12 +20,8 @@ export class ToolbarComponent {
   }
 
   changeMode() {
-    if (this.selectedTheme == 'light_mode') {
-      this.selectedTheme = 'dark_mode';
-      this.themeService.setDarkTheme(true);
-    } else {
-      this.selectedTheme = 'light_mode';
-      this.themeService.setDarkTheme(false);
-    }
+    const isDarkTheme = this.selectedTheme == ThemeEnum.DarkMode;
+    isDarkTheme ? this.selectedTheme = ThemeEnum.LightMode : this.selectedTheme = ThemeEnum.DarkMode;
+    this.themeService.setDarkTheme(isDarkTheme);
   }
 }

@@ -1,0 +1,15 @@
+.welcome-parent {
+    height: 80%;
+}
+
+.upload-tab:hover {
+    cursor: pointer;
+}
+
+.upload-tab:focus {
+    outline: none;
+}
+
+u, a {
+    color: var(--maua-accent)
+}
