@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false
+  plantnet_url: '',
+  plantnet_api_key: '',
 };
 
 /*
