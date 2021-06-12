@@ -75,7 +75,7 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.local.ts"
                 }
-              ],
+              ]
             }
           }
         },
@@ -101,6 +101,16 @@
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
+          "configurations": {
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            }
+          },
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",

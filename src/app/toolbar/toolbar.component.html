@@ -20,7 +20,7 @@
         <span [ngClass]="'align-middle flag-icon-size flag-icon flag-icon-' + selectedLanguage"></span>
     </button>
     <mat-menu #menu="matMenu" class="d-inline-flex justify-content-center mt-2">
-        <button *ngFor="let language of availableLangauges" mat-menu-item (click)="selectedLanguage = language">
+        <button *ngFor="let language of availableLanguages" mat-menu-item (click)="selectedLanguage = language">
             <span [ngClass]="'align-middle flag-icon-size flag-icon flag-icon-' + language"></span>
         </button>
     </mat-menu>

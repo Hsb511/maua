@@ -6,33 +6,37 @@ import { ThemeService } from '../common/theme.service';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css']
+  styleUrls: ['./toolbar.component.css'],
 })
 export class ToolbarComponent {
-  availableLangauges;
+  availableLanguages;
 
   private _selectedLanguage = 'fr';
   selectedTheme = ThemeEnum.LightMode;
 
-  constructor(private translate: TranslateService,
-    private themeService: ThemeService) {
-    this.availableLangauges = translate.getLangs();
-    translate.currentLang = this.selectedLanguage;
-    translate.addLangs(["en"])
+  constructor(
+    private translate: TranslateService,
+    private themeService: ThemeService
+  ) {
+    translate.addLangs(['en']);
+    translate.use(this.selectedLanguage);
+    this.availableLanguages = translate.getLangs();
   }
 
-  set selectedLanguage(language: string){
+  set selectedLanguage(language: string) {
     this._selectedLanguage = language;
-    this.translate.currentLang = language;
+    this.translate.use(language);
   }
 
-  get selectedLanguage(): string{
+  get selectedLanguage(): string {
     return this._selectedLanguage;
   }
 
   changeMode() {
     const isDarkTheme = this.selectedTheme == ThemeEnum.DarkMode;
-    isDarkTheme ? this.selectedTheme = ThemeEnum.LightMode : this.selectedTheme = ThemeEnum.DarkMode;
+    isDarkTheme
+      ? (this.selectedTheme = ThemeEnum.LightMode)
+      : (this.selectedTheme = ThemeEnum.DarkMode);
     this.themeService.setDarkTheme(isDarkTheme);
   }
 }
