@@ -3,7 +3,7 @@ import { IdentificationModel } from './models/identification.model';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -18,6 +18,25 @@ export class PlantnetService {
   ) {}
 
   private static PROJECT = 'all';
+
+  public renameFiles(files: File[]): Observable<File[]>{
+    const newFiles: File[] = files.slice();
+    return forkJoin(
+      newFiles.map((file) => {
+        this.identifyPlant(file).subscribe((response) => {
+          if (response.results) {
+            return new File(
+              [file],
+              response.results[0].species.commonNames[0],
+              { type: file.type }
+            );
+          }
+          return file;
+        });
+      })
+    );
+
+  }
 
   identifyPlant(file: File): Observable<IdentificationModel> {
     const formData = new FormData();
