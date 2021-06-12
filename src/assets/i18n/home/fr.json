@@ -1,4 +1,4 @@
-{ 
+{
     "nav": {
         "upload": "Envoi",
         "statistic": "Statistique",
@@ -20,6 +20,7 @@
         "zone-message": "Faites un glisser-déposer de vos photos ici",
         "upload-all": "Envoyer",
         "remove-all": "Annuler",
-        "modal-message": "Vos photos sont en cours d'analyse..."
+        "modal-message": "Vos photos sont en cours d'analyse...",
+        "failure-message": "L'identification a échoué"
     }
 }
