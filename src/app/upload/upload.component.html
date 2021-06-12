@@ -24,7 +24,7 @@
         <button mat-raised-button color="accent"
             type="button"
             class="d-flex ml-auto mr-2"
-            *ngIf="fileUploadQueue?.files?.length > 0"
+            *ngIf="fileUploadQueue?.files && fileUploadQueue.files.length > 0"
             (click)="upload()"
             data-toggle="modal"
             data-target="#loadingModal">
@@ -32,7 +32,7 @@
         </button>
         <button mat-raised-button color="accent"
             class="d-flex ml-2 mr-auto"
-            *ngIf="fileUploadQueue?.files?.length > 0"
+            *ngIf="fileUploadQueue?.files && fileUploadQueue.files.length > 0"
             (click)="deleteAllFiles()">
             {{'upload.remove-all' | translate}}
         </button>
