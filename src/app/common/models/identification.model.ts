@@ -14,7 +14,7 @@ export class Result {
   species: Specie;
 }
 
-class NamedObject {
+class Taxon {
   constructor(
     scientificNameWithoutAuthor: string,
     scientificNameAuthorship: string,

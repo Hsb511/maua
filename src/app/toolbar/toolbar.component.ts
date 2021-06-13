@@ -18,8 +18,9 @@ export class ToolbarComponent {
     private translate: TranslateService,
     private themeService: ThemeService
   ) {
+    //FIXME WE NEED TO TRANSFORM 'en' INTO 'gb' WHEN DISPLAYING THE FLAG
     translate.addLangs(['en']);
-    translate.use(this.selectedLanguage);
+    translate.use(this._selectedLanguage);
     this.availableLanguages = translate.getLangs();
   }
 
