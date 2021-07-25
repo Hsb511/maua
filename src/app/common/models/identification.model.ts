@@ -29,13 +29,13 @@ class Taxon {
   scientificName: string;
 }
 
-export class Specie extends NamedObject {
+export class Specie extends Taxon {
   constructor(
     scientificNameWithoutAuthor: string,
     scientificNameAuthorship: string,
     scientificName: string,
-    genus: NamedObject,
-    family: NamedObject,
+    genus: Taxon,
+    family: Taxon,
     commonNames:string[]
   ) {
     super(scientificNameWithoutAuthor, scientificNameAuthorship, scientificName);
@@ -43,7 +43,7 @@ export class Specie extends NamedObject {
     this.family = family;
     this.commonNames = commonNames;
   }
-  genus: NamedObject;
-  family: NamedObject;
+  genus: Taxon;
+  family: Taxon;
   commonNames: string[];
 }

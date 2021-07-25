@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { MatFileUploadQueueComponent } from 'angular-material-fileupload';
-import { LoadingModalComponent } from '../loading-modal/loading-modal.component';
+import { PlantnetService } from '../common/plantnet.service';
 
 @Component({
   selector: 'app-upload',
@@ -11,7 +10,7 @@ import { LoadingModalComponent } from '../loading-modal/loading-modal.component'
 export class UploadComponent {
   @ViewChild('fileUploadQueue') myFileUploadQueue?: ElementRef;
 
-  constructor() { }
+  constructor(private plantnetService: PlantnetService) { }
 
   deleteFile(file: File) {
     const files = this.getFiles();
@@ -26,8 +25,9 @@ export class UploadComponent {
 
   upload() {
     const files = this.getFiles();
-    // TODO CREATE AND CALL UPLOAD SERVICE
-    console.log(files);
+    this.plantnetService.renameFiles(files).subscribe((newFiles) => {
+      console.log(newFiles);
+    });
   }
 
   private getFiles() : Array<File> {

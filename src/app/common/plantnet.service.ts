@@ -1,10 +1,10 @@
 import { environment } from './../../environments/environment';
 import { IdentificationModel } from './models/identification.model';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+//import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -14,31 +14,25 @@ export class PlantnetService {
   constructor(
     private httpClient: HttpClient,
     private translateService: TranslateService,
-    private _snackBar: MatSnackBar
+    //private _snackBar: MatSnackBar
   ) {}
 
   private static PROJECT = 'all';
 
-  public renameFiles(files: File[]): Observable<File[]>{
+  public renameFiles(files: File[]): Observable<[File]>{
     const newFiles: File[] = files.slice();
-    return forkJoin(
-      newFiles.map((file) => {
-        this.identifyPlant(file).subscribe((response) => {
-          if (response.results) {
-            return new File(
-              [file],
-              response.results[0].species.commonNames[0],
-              { type: file.type }
-            );
-          }
-          return file;
-        });
-      })
-    );
-
+    return forkJoin<File>(this.identifyPlants(newFiles));
   }
 
-  identifyPlant(file: File): Observable<IdentificationModel> {
+  identifyPlants(files: File[]): [Observable<File>] {
+    var identificationModels: Observable<File>[] = [];
+    files.forEach((file) => {
+      identificationModels.push(this.identifyPlant(file));
+    })
+    return identificationModels as [Observable<File>];
+  }
+
+  identifyPlant(file: File): Observable<File> {
     const formData = new FormData();
     formData.append('images', file);
     formData.append('organs', 'flower');
@@ -54,7 +48,16 @@ export class PlantnetService {
           },
         }
       )
-      .pipe(catchError(this.handleError({ results: [] })));
+      .pipe(
+        map(response => {
+          return new File(
+            [file], 
+            response.results[0].species.commonNames[0], 
+            { type: file.type }
+          )
+        })
+        //TODO catchError with method handleError
+      );
   }
 
   /**
@@ -68,12 +71,13 @@ export class PlantnetService {
       console.log(`Identifying the image failed: ${error.message}`);
       this.translateService
         .get('upload.failure-message')
-        .subscribe((translation) =>
+        .subscribe(/*(translation) =>
+          
           this._snackBar.open(translation, undefined, {
             duration: 3000,
             horizontalPosition: 'center',
             verticalPosition: 'bottom',
-          })
+          })*/
         );
       // Let the app keep running by returning an empty result.
       return of(result as IdentificationModel);
