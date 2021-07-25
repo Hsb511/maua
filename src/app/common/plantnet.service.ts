@@ -19,11 +19,6 @@ export class PlantnetService {
 
   private static PROJECT = 'all';
 
-  public renameFiles(files: File[]): Observable<[File]>{
-    const newFiles: File[] = files.slice();
-    return forkJoin<File>(this.identifyPlants(newFiles));
-  }
-
   identifyPlants(files: File[]): [Observable<File>] {
     var identificationModels: Observable<File>[] = [];
     files.forEach((file) => {
