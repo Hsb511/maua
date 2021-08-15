@@ -21,6 +21,7 @@
         "upload-all": "Envoyer",
         "remove-all": "Annuler",
         "modal-message": "Vos photos sont en cours d'analyse...",
-        "failure-message": "L'identification a échoué"
+        "failure-message": "L'identification a échoué",
+        "upload-done": "Vos photos sont téléchargées. Vous pouvez les dézipper dans votre dossier téléchargement !"
     }
 }

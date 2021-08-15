@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatFileUploadQueueComponent } from 'angular-material-fileupload';
 import { FileService } from '../common/file.service';
+import { LoadingModalComponent } from '../loading-modal/loading-modal.component';
 
 @Component({
   selector: 'app-upload',
@@ -9,6 +10,7 @@ import { FileService } from '../common/file.service';
 })
 export class UploadComponent {
   @ViewChild('fileUploadQueue') myFileUploadQueue?: ElementRef;
+  @ViewChild('appLoadingModal') appLoadingModal?: ElementRef;  
 
   constructor(private fileService: FileService) { }
 
@@ -24,9 +26,9 @@ export class UploadComponent {
   }
 
   upload() {
+    this.openModal();
     const files = this.getFiles();
     this.fileService.renameFiles(files).subscribe((newFiles) => {
-      console.log(newFiles);
       this.fileService.zipFiles(newFiles).then(() => this.closeModal());
     });
   }
@@ -39,7 +41,15 @@ export class UploadComponent {
     return files;
   }
 
+  private openModal() {
+    if (this.appLoadingModal instanceof LoadingModalComponent) {
+      this.appLoadingModal?.openModal();
+    }
+  }
+
   private closeModal() {
-    //TODO CLOSE LOADING MODAL
+    if (this.appLoadingModal instanceof LoadingModalComponent) {
+      this.appLoadingModal?.closeModal();
+    }
   }
 }
