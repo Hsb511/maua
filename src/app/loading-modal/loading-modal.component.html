@@ -2,9 +2,13 @@
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content mat-app-background">
-            <div class="modal-body">
-                <h4 class="modal-title" id="modal-basic-title">{{'upload.modal-message' | translate}}</h4>
+            <div class="modal-body" id="modalBody" #modalBody>
+                <h4 class="modal-title">{{'upload.modal-message' | translate}}</h4>
+                <h4 class="modal-title" style="display: none;">{{'upload.upload-done' | translate}}</h4>
                 <mat-spinner class="mx-auto" color="accent" diameter="50"></mat-spinner>
+                <button mat-raised-button type="button" color="accent" class="mx-auto" data-dismiss="modal" data-target="#loadingModal" style="display: none;">
+                    OK
+                </button>
             </div>
         </div>
     </div>

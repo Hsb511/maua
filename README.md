@@ -5,7 +5,16 @@ This projects aims at providing an interface that wil call plantnet's API
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First create a file called environment.local.ts next to environment.ts with the following content :
+```typescript
+export const environment = {
+  production: false,
+  plantnet_url: 'https://my-api.plantnet.org/',
+  plantnet_api_key: '<your API key>',
+};
+```
+
+Run `ng serve --configuration=local` or `ng serve -c local` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
